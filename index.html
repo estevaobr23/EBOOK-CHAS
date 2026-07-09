@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Manual Visual do Preparo Correto dos Chás</title>
-  <meta name="description" content="Pare de preparar todos os chás do mesmo jeito. Um manual visual para consultar a parte certa da planta, o método, a quantidade, o tempo e os cuidados — antes de cada preparo." />
+  <meta name="description" content="Mais de 75 chás e plantas explicados um por um em um único manual visual: parte usada, método, quantidade, tempo e cuidados. Abra, encontre a planta e consulte antes de preparar." />
 
   <!-- Pixel Utmify -->
   <script>
@@ -56,7 +56,7 @@
       --transition: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 
       --font-body: 'Inter', system-ui, sans-serif;
-      --font-display: 'Playfair Display', Georgia, serif;
+      --font-display: 'Inter', system-ui, sans-serif;
       --font-num: 'Outfit', system-ui, sans-serif;
       --font-serif: 'Lora', Georgia, serif;
     }
@@ -198,7 +198,10 @@
 
     /* ============ HERO ============ */
     .hero {
-      background: #ffffff;
+      /* fundo escuro botânico, com um brilho verde sutil no topo pra dar profundidade */
+      background:
+        radial-gradient(circle at 50% 0%, hsla(88,40%,40%,0.18), transparent 55%),
+        var(--bg-dark);
       padding: 64px 0 72px;
     }
     .hero-stack {
@@ -213,28 +216,32 @@
     .hero-actions { display: flex; flex-direction: column; align-items: center; }
     .pre-headline {
       display: inline-flex; align-items: center; gap: 8px;
-      background: var(--accent-soft);
-      color: var(--secondary-dark);
+      background: hsla(88,45%,55%,0.14);
+      color: var(--accent);
       font-family: var(--font-num); font-weight: 700;
       font-size: 0.88rem; letter-spacing: 0.02em;
       padding: 8px 16px; border-radius: 999px;
       margin-bottom: 22px;
-      border: 1px solid hsla(88,30%,60%,0.35);
+      border: 1px solid hsla(88,45%,60%,0.30);
     }
     .hero h1 {
       font-size: clamp(2.1rem, 5.2vw, 3.3rem);
-      color: var(--text-dark);
+      color: #ffffff;
       margin-bottom: 20px;
     }
+    /* destaque da headline: o verde escuro some no fundo dark, então usa o broto claro */
+    .hero h1 .hl { color: var(--accent); }
     .hero .sub {
-      font-size: 1.15rem; color: var(--text-muted);
+      font-size: 1.15rem; color: hsla(60,18%,90%,0.72);
       max-width: 560px; margin: 0 auto;
     }
     .hero-mockup { position: relative; }
     .hero-mockup .hero-img {
       width: 100%; height: auto; display: block;
-      filter: drop-shadow(0 24px 48px hsla(146,45%,20%,0.22));
+      filter: drop-shadow(0 24px 48px hsla(0,0%,0%,0.45));
     }
+    .hero .cta-note { color: hsla(60,18%,90%,0.65); }
+    .hero .cta-note strong { color: var(--accent); }
 
     /* ============ VITRINE ============ */
     .grid-cards {
@@ -527,6 +534,7 @@
       box-shadow: var(--shadow-large); position: relative;
       transition: var(--transition);
       overflow: visible;   /* sobrescreve o overflow:hidden de .card — mockup transborda livre */
+      text-align: center;  /* selo, título e descrição centralizados */
     }
     .bonus-card:hover { transform: translateY(-6px); }
     /* Imagem do bônus MAIOR que o card: transborda topo + laterais (flutua por cima) */
@@ -551,17 +559,20 @@
       color: var(--primary-dark);
       background: linear-gradient(135deg, var(--accent), var(--accent-strong));
       display: inline-block; padding: 5px 13px; border-radius: 999px;
-      margin-bottom: 16px; align-self: flex-start; letter-spacing: 0.05em;
+      margin-bottom: 16px; align-self: center; letter-spacing: 0.05em;
     }
     .bonus-card h3 { font-family: var(--font-serif); font-size: 1.2rem; color: var(--primary-dark); margin-bottom: 10px; }
     .bonus-card p { color: var(--text-muted); font-size: 0.95rem; flex-grow: 1; }
-    .bonus-price { margin-top: 18px; padding-top: 16px; border-top: 1px dashed var(--border-color); }
-    .bonus-price s { color: var(--text-muted); font-size: 0.9rem; }
-    .bonus-price b { display: block; color: var(--convert-green); font-family: var(--font-num); font-weight: 800; font-size: 1.02rem; margin-top: 3px; }
+    .bonus-price {
+      margin-top: 18px; padding-top: 16px; border-top: 1px dashed var(--border-color);
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    }
+    .bonus-price s { color: #d33; font-size: 0.9rem; }
+    .bonus-price b { color: var(--convert-green); font-family: var(--font-num); font-weight: 800; font-size: 1.02rem; text-align: right; }
 
     .bonus-sum { text-align: center; margin-top: 42px; }
     .bonus-sum p { font-size: 1.15rem; color: hsla(60,20%,92%,0.9); }
-    .bonus-sum s { color: hsla(60,15%,75%,0.6); }
+    .bonus-sum s { color: #ff6b6b; }
     .bonus-sum strong { color: var(--accent); font-family: var(--font-num); font-size: 1.5rem; }
 
     /* ============ DEPOIMENTOS ============ */
@@ -809,28 +820,28 @@
     <div class="marquee-track">
       <!-- Grupo 1 -->
       <span class="marquee-group" aria-hidden="false">
-        <span class="mq-item">🌿 Ervas &amp; plantas medicinais</span>
+        <span class="mq-item">🌿 Mais de 75 chás e plantas</span>
         <span class="mq-sep">•</span>
-        <span class="mq-item">🍵 Preparo consciente</span>
+        <span class="mq-item">📖 Uma ficha visual pra cada planta</span>
         <span class="mq-sep">•</span>
-        <span class="mq-item">📖 +50 fichas visuais</span>
+        <span class="mq-item">🔎 Consulta rápida num lugar só</span>
         <span class="mq-sep">•</span>
-        <span class="mq-item">💧 Infusão, decocção &amp; maceração</span>
+        <span class="mq-item">📋 Parte usada, quantidade, tempo e cuidados</span>
         <span class="mq-sep">•</span>
-        <span class="mq-item">✅ Consulta rápida antes de cada chá</span>
+        <span class="mq-item">✅ Abra, encontre a planta e prepare</span>
         <span class="mq-sep">•</span>
       </span>
       <!-- Grupo 2 (cópia idêntica p/ loop contínuo) -->
       <span class="marquee-group" aria-hidden="true">
-        <span class="mq-item">🌿 Ervas &amp; plantas medicinais</span>
+        <span class="mq-item">🌿 Mais de 75 chás e plantas</span>
         <span class="mq-sep">•</span>
-        <span class="mq-item">🍵 Preparo consciente</span>
+        <span class="mq-item">📖 Uma ficha visual pra cada planta</span>
         <span class="mq-sep">•</span>
-        <span class="mq-item">📖 +50 fichas visuais</span>
+        <span class="mq-item">🔎 Consulta rápida num lugar só</span>
         <span class="mq-sep">•</span>
-        <span class="mq-item">💧 Infusão, decocção &amp; maceração</span>
+        <span class="mq-item">📋 Parte usada, quantidade, tempo e cuidados</span>
         <span class="mq-sep">•</span>
-        <span class="mq-item">✅ Consulta rápida antes de cada chá</span>
+        <span class="mq-item">✅ Abra, encontre a planta e prepare</span>
         <span class="mq-sep">•</span>
       </span>
     </div>
@@ -842,9 +853,9 @@
       <div class="hero-stack">
         <!-- 1. Headline + subheadline -->
         <div class="hero-copy reveal">
-          <span class="pre-headline">🌱 +50 fichas visuais de plantas e chás</span>
-          <h1>Nem todo chá se prepara do <span class="hl">mesmo jeito</span> — e talvez você nunca tenha aprendido isso.</h1>
-          <p class="sub">Um manual visual pra você consultar, antes de cada preparo, qual parte da planta usar, qual método aplicar, quanto tempo deixar e quais cuidados observar.</p>
+          <span class="pre-headline">🌱 Mais de 75 chás e plantas em um só lugar</span>
+          <h1>Mais de 75 chás explicados em um <span class="hl">único manual visual</span>: quantidade, tempo, parte usada e preparo correto.</h1>
+          <p class="sub">Chega de procurar uma informação em cada vídeo ou site. Abra o manual, encontre a planta e consulte tudo o que precisa antes de colocar a água para esquentar.</p>
         </div>
         <!-- 2. Mockup (imagem real do header) -->
         <div class="hero-mockup reveal delay-1">
@@ -852,7 +863,7 @@
         </div>
         <!-- 3. Restante (CTA + nota) -->
         <div class="hero-actions reveal delay-2">
-          <a href="#comprar" class="btn">Quero preparar do jeito certo ➔</a>
+          <a href="#comprar" class="btn">Quero meu manual com +75 plantas ➔</a>
           <p class="cta-note">✔ Acesso imediato • material digital • <strong>garantia de 7 dias</strong></p>
         </div>
       </div>
@@ -863,8 +874,8 @@
   <section>
     <div class="container">
       <div class="section-head reveal">
-        <h2>Uma ficha visual para cada planta</h2>
-        <p>Veja por dentro algumas das fichas reais do manual: planta, parte usada, método, quantidade, tempo e cuidados — tudo no mesmo padrão fácil de consultar.</p>
+        <h2>Não é uma lista de nomes. Cada planta tem sua própria ficha.</h2>
+        <p>São mais de 75 chás e plantas, um por um. Da camomila ao gengibre, das flores delicadas às raízes e cascas — cada ficha traz parte usada, método, quantidade, tempo e cuidados, sempre no mesmo padrão fácil de consultar.</p>
       </div>
       <div class="grid-cards">
         <div class="card item-card ficha-card reveal">
@@ -912,13 +923,13 @@
           <div class="ficha-thumb"><img src="assets/secao2/capa.png" alt="Capa do Manual Visual do Preparo Correto dos Chás" loading="lazy"></div>
           <div class="ficha-body">
             <h3>Manual Visual do Preparo Correto dos Chás</h3>
-            <p>Todas essas fichas reunidas em um só material: mais de 50 plantas para consultar antes de preparar, sempre no mesmo padrão visual.</p>
-            <div class="meta">O ebook completo</div>
+            <p>Uma biblioteca visual com mais de 75 plantas reunidas num só lugar. Você não precisa decorar nada: abre, encontra a planta e consulta sempre que precisar.</p>
+            <div class="meta">A biblioteca completa</div>
           </div>
         </div>
       </div>
       <div class="strip-diferencial reveal">
-        <strong>Mais de 50 fichas visuais</strong> organizadas por planta, parte usada, método, quantidade, tempo e cuidados — pra você consultar sempre que for preparar.
+        <strong>Mais de 75 fichas visuais</strong> organizadas por planta, parte usada, método, quantidade, tempo e cuidados — reunidas num só lugar pra você consultar sempre que precisar.
       </div>
     </div>
   </section>
@@ -927,22 +938,22 @@
   <section class="compare-section">
     <div class="container">
       <div class="section-head reveal">
-        <h2>Preparar no automático <span class="hl-italic">ou</span> com consciência</h2>
-        <p>O problema quase nunca é tomar chá. É tratar todas as plantas como se fossem iguais.</p>
+        <h2>Informação espalhada <span class="hl-italic">ou</span> tudo num lugar só</h2>
+        <p>O problema quase nunca é falta de informação. É ter tudo espalhado e precisar pesquisar de novo toda vez que você vai preparar uma planta.</p>
       </div>
       <div class="compare">
         <div class="compare-col wrong reveal">
           <div class="compare-head">
             <span class="compare-index">antes</span>
           </div>
-          <h3>No automático</h3>
-          <p class="col-sub">Do jeito que sempre foi feito, na dúvida</p>
+          <h3>Tudo espalhado</h3>
+          <p class="col-sub">Vídeo salvo aqui, print ali, pesquisa de novo</p>
           <ul>
-            <li><span class="mark">✕</span> Ferver tudo do mesmo jeito</li>
-            <li><span class="mark">✕</span> “Chutar” a quantidade da erva</li>
-            <li><span class="mark">✕</span> Não saber qual parte usar</li>
-            <li><span class="mark">✕</span> Deixar o tempo que der</li>
-            <li><span class="mark">✕</span> Ignorar cuidados e misturas</li>
+            <li><span class="mark">✕</span> Um vídeo pra saber o tempo</li>
+            <li><span class="mark">✕</span> Outro site pra ver a quantidade</li>
+            <li><span class="mark">✕</span> Cada fonte ensina de um jeito</li>
+            <li><span class="mark">✕</span> Print que você nunca acha depois</li>
+            <li><span class="mark">✕</span> Pesquisar tudo de novo toda vez</li>
           </ul>
         </div>
         <div class="compare-col right reveal delay-1">
@@ -950,14 +961,14 @@
           <div class="compare-head">
             <span class="compare-index">depois</span>
           </div>
-          <h3>Com o Manual Visual</h3>
-          <p class="col-sub">Consulta rápida antes de cada preparo</p>
+          <h3>Tudo num lugar só</h3>
+          <p class="col-sub">Mais de 75 plantas organizadas pra consultar</p>
           <ul>
-            <li><span class="mark">✓</span> Método certo pra cada planta</li>
-            <li><span class="mark">✓</span> Quantidade orientativa clara</li>
-            <li><span class="mark">✓</span> Parte da planta indicada</li>
-            <li><span class="mark">✓</span> Tempo orientativo por ficha</li>
-            <li><span class="mark">✓</span> Cuidados sempre à vista</li>
+            <li><span class="mark">✓</span> Todas as plantas no mesmo manual</li>
+            <li><span class="mark">✓</span> Parte usada, quantidade e método juntos</li>
+            <li><span class="mark">✓</span> Tempo e cuidados na mesma ficha</li>
+            <li><span class="mark">✓</span> Você encontra em segundos</li>
+            <li><span class="mark">✓</span> Consulta de novo sempre que precisar</li>
           </ul>
         </div>
       </div>
@@ -968,8 +979,8 @@
   <section>
     <div class="container">
       <div class="section-head reveal">
-        <h2>Veja como é por dentro</h2>
-        <p>Cada ficha segue a mesma lógica: planta → parte → método → quantidade → tempo → cuidados.</p>
+        <h2>Abra, encontre a planta e consulte</h2>
+        <p>Por que cada planta precisa da sua própria ficha? Porque nem todo chá se prepara igual: umas usam folha, outras flor, raiz ou casca — e o tempo, a quantidade e os cuidados mudam. Cada ficha segue a mesma lógica: planta → parte → método → quantidade → tempo → cuidados.</p>
       </div>
 
       <div class="flipbook reveal">
@@ -1021,7 +1032,7 @@
 
       <div class="cta-inline reveal">
         <a href="#comprar" class="btn">Quero meu manual de consulta ➔</a>
-        <p>Um lugar só pra consultar <strong>mais de 50 plantas e chás</strong> antes de preparar.</p>
+        <p>Um lugar só pra consultar <strong>mais de 75 plantas e chás</strong> sempre que precisar.</p>
       </div>
     </div>
   </section>
@@ -1031,23 +1042,23 @@
     <div class="container">
       <div class="section-head reveal">
         <h2>Feito pra você que já ama chás</h2>
-        <p>Se você se reconhece em algum destes perfis, este manual foi pensado pra você.</p>
+        <p>Se você se reconhece em algum destes perfis, esta biblioteca visual foi pensada pra você.</p>
       </div>
       <div class="persona-grid">
         <div class="card persona-card reveal">
-          <div class="ic">🍵</div>
-          <h3>Quem já toma chá há anos</h3>
-          <p>Aprendeu com a mãe, a avó ou a vizinha — e quer entender os detalhes que ninguém explicou.</p>
+          <div class="ic">📱</div>
+          <h3>Quem vive salvando receita</h3>
+          <p>Salva vídeo, tira print, pesquisa no Google — e depois nunca acha aquilo que precisa na hora de preparar.</p>
         </div>
         <div class="card persona-card featured reveal delay-1">
           <div class="ic">🌱</div>
-          <h3>Quem começou há pouco</h3>
-          <p>Se encantou pelas plantas, comprou algumas ervas e quer uma orientação simples pra não errar.</p>
+          <h3>Quem tem várias ervas em casa</h3>
+          <p>Já comprou ou ganhou várias plantas e queria um lugar só pra consultar cada uma antes de usar.</p>
         </div>
         <div class="card persona-card reveal delay-2">
           <div class="ic">🏡</div>
-          <h3>Quem cuida da família</h3>
-          <p>Prepara o chá pra casa toda e gosta de fazer as coisas com atenção, capricho e consciência.</p>
+          <h3>Quem prepara pra família</h3>
+          <p>Faz chá pra casa toda, gosta de conhecimento prático e valoriza ter tudo organizado num só material.</p>
         </div>
       </div>
     </div>
@@ -1058,47 +1069,47 @@
     <div class="container">
       <div class="prehead reveal">Levando hoje, você também recebe</div>
       <div class="section-head reveal">
-        <h2>5 bônus pra deixar tudo ainda mais prático</h2>
+        <h2>5 bônus que expandem seu universo das ervas</h2>
       </div>
       <div class="bonus-grid">
         <div class="card bonus-card reveal">
           <div class="bonus-thumb"><img src="assets/bonus/bonus-1.png" alt="Bônus: Tabela Rápida dos Chás" loading="lazy"></div>
           <span class="bnum">BÔNUS 1</span>
           <h3>Tabela Rápida dos Chás</h3>
-          <p>Planta, parte usada, método, quantidade e tempo numa tabela compacta — pra consultar sem abrir a ficha completa.</p>
+          <p>Para quando você quer só o essencial em segundos: planta, parte usada, método, quantidade e tempo numa tabela compacta, sem abrir a ficha completa.</p>
           <div class="bonus-price"><s>De R$ 27</s><b>VAI SAIR DE GRAÇA</b></div>
         </div>
         <div class="card bonus-card reveal delay-1">
           <div class="bonus-thumb"><img src="assets/bonus/bonus-2.png" alt="Bônus: Infusão, Decocção ou Maceração" loading="lazy"></div>
           <span class="bnum">BÔNUS 2</span>
           <h3>Infusão, Decocção ou Maceração?</h3>
-          <p>Um mapa visual que responde “qual método usar?” de acordo com a parte da planta que você tem na mão.</p>
+          <p>Um mapa visual pra você parar de confundir os métodos e entender, sem complicação, qual usar de acordo com a parte da planta que tem na mão.</p>
           <div class="bonus-price"><s>De R$ 27</s><b>VAI SAIR DE GRAÇA</b></div>
         </div>
         <div class="card bonus-card reveal delay-2">
           <div class="bonus-thumb"><img src="assets/bonus/bonus-3.png" alt="Bônus: Temperos Naturais Feitos em Casa" loading="lazy"></div>
           <span class="bnum">BÔNUS 3</span>
           <h3>Temperos Naturais Feitos em Casa</h3>
-          <p>Um guia prático para preparar combinações de ervas e temperos naturais em casa, com ideias simples para dar mais sabor e aroma às refeições do dia a dia.</p>
+          <p>Leve as ervas também pra cozinha: combinações simples de ervas e especiarias pra dar mais sabor e aroma às refeições do dia a dia.</p>
           <div class="bonus-price"><s>De R$ 37</s><b>VAI SAIR DE GRAÇA</b></div>
         </div>
         <div class="card bonus-card reveal">
           <div class="bonus-thumb"><img src="assets/bonus/bonus-4.png" alt="Bônus: Escalda-Pés com Ervas e Aromas" loading="lazy"></div>
           <span class="bnum">BÔNUS 4</span>
           <h3>Escalda-Pés com Ervas e Aromas</h3>
-          <p>Um guia visual com combinações de ervas, flores e aromas para criar momentos de pausa, conforto e autocuidado em casa.</p>
+          <p>Transforme suas ervas em momentos de pausa: combinações de ervas, flores e aromas pra criar conforto e autocuidado em casa.</p>
           <div class="bonus-price"><s>De R$ 27</s><b>VAI SAIR DE GRAÇA</b></div>
         </div>
         <div class="card bonus-card reveal delay-1">
           <div class="bonus-thumb"><img src="assets/bonus/bonus-5.png" alt="Bônus: Minha Primeira Horta de Ervas em Casa" loading="lazy"></div>
           <span class="bnum">BÔNUS 5</span>
           <h3>Minha Primeira Horta de Ervas em Casa</h3>
-          <p>Um guia visual para começar uma pequena horta de ervas em vasos ou pequenos espaços, com orientações simples sobre escolha das plantas, plantio, cuidados e colheita.</p>
+          <p>Comece a cultivar suas próprias ervas: um guia visual pra montar uma horta em vasos ou espaços pequenos — escolha das plantas, luz, rega, cuidados e colheita.</p>
           <div class="bonus-price"><s>De R$ 47</s><b>VAI SAIR DE GRAÇA</b></div>
         </div>
       </div>
       <div class="bonus-sum reveal">
-        <p>Só em bônus são <s>R$ 165</s> que você <strong>não paga hoje</strong>.</p>
+        <p>Um kit completo sobre o universo das ervas. Só em bônus são <s>R$ 165</s> que você <strong>não paga hoje</strong>.</p>
         <a href="#comprar" class="btn btn-bonus" style="margin-top:22px;">Quero o manual + os 5 bônus ➔</a>
       </div>
     </div>
@@ -1109,7 +1120,7 @@
     <div class="container">
       <div class="section-head reveal">
         <h2>Quem já consulta o manual conta</h2>
-        <p>Mulheres que trocaram o preparo no automático pela consulta consciente.</p>
+        <p>Mulheres que trocaram a informação espalhada por uma biblioteca num lugar só.</p>
       </div>
       <div class="depo-grid">
         <div class="card depo-card reveal">
@@ -1117,21 +1128,21 @@
           <div class="depo-name">Rosangela Prado</div>
           <div class="depo-meta"><span class="verified">✔ Verificado</span> · Juiz de Fora/MG</div>
           <div class="stars">★★★★★</div>
-          <p class="txt">“Eu jurava que sabia fazer chá. Descobri que fervia tudo igual, até as flores. Agora <mark>consulto a ficha antes</mark> e faço com muito mais cuidado.”</p>
+          <p class="txt">“Tenho um monte de erva em casa e vivia pesquisando cada uma. Agora é só <mark>abrir e achar a planta</mark> no manual. Tudo num lugar só, muito mais prático.”</p>
         </div>
         <div class="card depo-card reveal delay-1">
           <div class="depo-avatar"><img src="assets/depoimentos/depo-2.jpg" alt="Cleide Fernandes" loading="lazy"></div>
           <div class="depo-name">Cleide Fernandes</div>
           <div class="depo-meta"><span class="verified">✔ Verificado</span> · Londrina/PR</div>
           <div class="stars">★★★★★</div>
-          <p class="txt">“Eu vivia salvando vídeo e print de receita e nunca achava depois 😅. Agora tenho <mark>tudo num lugar só</mark>, organizado por planta. Amei!”</p>
+          <p class="txt">“Eu vivia salvando vídeo e print de receita e nunca achava depois 😅. Agora são <mark>mais de 75 plantas</mark> organizadas por ficha. Não preciso decorar nada, é só consultar!”</p>
         </div>
         <div class="card depo-card reveal delay-2">
           <div class="depo-avatar"><img src="assets/depoimentos/depo-3.jpg" alt="Marta Siqueira" loading="lazy"></div>
           <div class="depo-name">Marta Siqueira</div>
           <div class="depo-meta"><span class="verified">✔ Verificado</span> · Santos/SP</div>
           <div class="stars">★★★★★</div>
-          <p class="txt">“O guia de infusão e decocção me abriu os olhos. Casca e raiz não é a mesma coisa que folha! O material é <mark>lindo e fácil</mark> de usar.”</p>
+          <p class="txt">“Cada planta tem a própria ficha, com parte usada, tempo e cuidados. Sempre que compro uma erva nova eu <mark>já consulto ali</mark>. O material é lindo e fácil de usar.”</p>
         </div>
       </div>
     </div>
@@ -1143,7 +1154,7 @@
       <div class="prehead reveal">Oferta de lançamento</div>
       <div class="section-head reveal">
         <h2>Garanta seu Manual Visual hoje</h2>
-        <p>Escolha como você quer começar a preparar seus chás com consciência.</p>
+        <p>Escolha como você quer ter mais de 75 chás e plantas organizados num lugar só.</p>
       </div>
       <div class="offer-grid">
         <!-- BÁSICO (âncora) -->
@@ -1154,7 +1165,7 @@
           <p class="price-note">pagamento único</p>
           <ul>
             <li><span class="m-yes">✓</span> <span class="li-txt">Manual Visual completo</span></li>
-            <li><span class="m-yes">✓</span> <span class="li-txt">Fichas visuais das plantas</span></li>
+            <li><span class="m-yes">✓</span> <span class="li-txt">+75 fichas visuais das plantas</span></li>
             <li class="no"><span class="m-no">✕</span> <span class="li-txt">Tabela Rápida dos Chás</span></li>
             <li class="no"><span class="m-no">✕</span> <span class="li-txt">Guia de métodos de preparo</span></li>
             <li class="no"><span class="m-no">✕</span> <span class="li-txt">Os 5 bônus exclusivos</span></li>
@@ -1166,19 +1177,21 @@
         <div class="plan plan-vip reveal delay-1">
           <span class="plan-tag">⭐ O mais escolhido</span>
           <h3>Manual Completo + 5 Bônus</h3>
-          <p class="plan-sub">A biblioteca visual de consulta completa</p>
+          <p class="plan-sub">A biblioteca visual com +75 plantas e os bônus</p>
           <div class="plan-hero"><img src="assets/header.png" alt="Manual Visual do Preparo Correto dos Chás + bônus" loading="lazy"></div>
           <p class="price-anchor">De <s>R$ 197</s> por apenas</p>
           <div class="price"><small>R$</small> 29<small>,90</small></div>
           <p class="price-note">pagamento único • acesso imediato</p>
           <ul>
             <li><span class="m-yes">✓</span> <span class="li-txt">Manual Visual completo</span></li>
-            <li><span class="m-yes">✓</span> <span class="li-txt">+50 fichas visuais das plantas</span></li>
+            <li><span class="m-yes">✓</span> <span class="li-txt">+75 fichas visuais das plantas</span></li>
             <li><span class="m-yes">✓</span> <span class="li-txt"><strong>Bônus 1:</strong> Tabela Rápida dos Chás</span></li>
             <li><span class="m-yes">✓</span> <span class="li-txt"><strong>Bônus 2:</strong> Guia Infusão × Decocção × Maceração</span></li>
             <li><span class="m-yes">✓</span> <span class="li-txt"><strong>Bônus 3:</strong> Temperos Naturais Feitos em Casa</span></li>
             <li><span class="m-yes">✓</span> <span class="li-txt"><strong>Bônus 4:</strong> Escalda-Pés com Ervas e Aromas</span></li>
             <li><span class="m-yes">✓</span> <span class="li-txt"><strong>Bônus 5:</strong> Minha Primeira Horta de Ervas em Casa</span></li>
+            <li><span class="m-yes">✓</span> <span class="li-txt"><strong>Suporte via WhatsApp</strong> pra tirar suas dúvidas</span></li>
+            <li><span class="m-yes">✓</span> <span class="li-txt"><strong>Atualizações futuras</strong> do manual sem pagar de novo</span></li>
           </ul>
           <a href="#" class="btn btn-vip" id="checkoutVip">Quero o manual completo ➔</a>
           <p class="plan-note">🔒 Compra segura • garantia de 7 dias</p>
@@ -1196,7 +1209,7 @@
           <span class="small">dias</span>
         </div>
         <h2>Consulte sem risco por 7 dias</h2>
-        <p>Baixe o manual, abra as fichas e use na sua próxima xícara. Se em <strong>7 dias</strong> você sentir que não é pra você, é só me avisar que eu <strong>devolvo todo o seu dinheiro</strong>. O risco é todo meu.</p>
+        <p>Baixe o manual, procure suas plantas e consulte na sua próxima xícara. Se em <strong>7 dias</strong> você sentir que não é pra você, é só me avisar que eu <strong>devolvo todo o seu dinheiro</strong>. O risco é todo meu.</p>
       </div>
     </div>
   </section>
@@ -1209,24 +1222,24 @@
       </div>
       <div class="faq-list reveal">
         <div class="faq-item">
+          <button class="faq-q" type="button">Mas eu posso pesquisar tudo isso na internet, não posso? <span class="chev">+</span></button>
+          <div class="faq-a"><p>Pode — e é justamente esse o problema que o manual resolve. Na internet você acha um vídeo pra uma planta, um site pra outra, um post pra ver a quantidade e mais uma pesquisa pra conferir o tempo. Aqui são mais de 75 plantas já organizadas num lugar só, prontas pra consultar sem ficar caçando de novo toda vez.</p></div>
+        </div>
+        <div class="faq-item">
           <button class="faq-q" type="button">Eu já sei fazer chá. Isso serve pra mim? <span class="chev">+</span></button>
-          <div class="faq-a"><p>Serve — e talvez surpreenda. Você pode saber preparar alguns, mas folhas, flores, raízes, cascas e sementes nem sempre pedem o mesmo preparo. O manual organiza essas diferenças pra você.</p></div>
+          <div class="faq-a"><p>Serve. Você provavelmente sabe preparar as plantas que já conhece — mas o manual reúne mais de 75 e organiza as diferenças de parte usada, quantidade, método, tempo e cuidados. Não pressupõe que você não sabe nada: ele te dá amplitude e um lugar pra consultar sempre que precisar.</p></div>
         </div>
         <div class="faq-item">
-          <button class="faq-q" type="button">Não sou especialista em plantas. Vou entender? <span class="chev">+</span></button>
-          <div class="faq-a"><p>Com certeza. O manual foi feito pra consulta simples e visual, sem termos difíceis. Você encontra a planta, olha a ficha e pronto.</p></div>
+          <button class="faq-q" type="button">Eu só uso algumas plantas. Vale a pena? <span class="chev">+</span></button>
+          <div class="faq-a"><p>Vale. O valor não está só no que você usa hoje: o manual está lá pra quando você comprar uma erva nova, ganhar uma planta, descobrir um chá diferente ou simplesmente bater aquela dúvida. É uma biblioteca pra voltar quando quiser.</p></div>
         </div>
         <div class="faq-item">
-          <button class="faq-q" type="button">Uso só algumas plantas. Vale a pena? <span class="chev">+</span></button>
-          <div class="faq-a"><p>Vale. Mesmo quem usa poucas ervas ganha em entender melhor exatamente aquelas que já fazem parte da rotina — e o manual ainda amplia seu repertório.</p></div>
+          <button class="faq-q" type="button">São mais de 75 plantas… vou ter que estudar tudo? <span class="chev">+</span></button>
+          <div class="faq-a"><p>Não. Você não precisa aprender nem decorar nada. O manual foi feito pra consulta: abra, procure a planta, veja a ficha e prepare. A grande quantidade não é obrigação de estudo — é ter tudo disponível quando você precisar.</p></div>
         </div>
         <div class="faq-item">
           <button class="faq-q" type="button">Como recebo o material? <span class="chev">+</span></button>
-          <div class="faq-a"><p>É digital. Assim que a compra é confirmada, o acesso chega no seu e-mail e você já pode consultar no celular, tablet ou computador.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q" type="button">E se eu não gostar? <span class="chev">+</span></button>
-          <div class="faq-a"><p>Você tem 7 dias de garantia. Se não for pra você, devolvemos 100% do valor, sem burocracia. Pode consultar tranquila.</p></div>
+          <div class="faq-a"><p>É digital. Assim que a compra é confirmada, o acesso chega no seu e-mail e você já pode consultar no celular, tablet ou computador — na hora que a dúvida aparecer.</p></div>
         </div>
       </div>
     </div>
@@ -1237,8 +1250,8 @@
     <div class="container container-narrow">
       <div class="reveal">
         <span class="urg">⏳ Preço de lançamento por tempo limitado</span>
-        <h2>Você não precisa abandonar os chás que já ama.<br>Só precisa preparar cada um do jeito certo.</h2>
-        <a href="#comprar" class="btn">Quero preparar do jeito certo ➔</a>
+        <h2>Pare de procurar a mesma informação em vários lugares.<br>Tenha mais de 75 plantas num manual só.</h2>
+        <a href="#comprar" class="btn">Quero meu manual com +75 plantas ➔</a>
         <p class="cta-note">✔ Acesso imediato • material digital • <strong>garantia de 7 dias</strong></p>
       </div>
     </div>
@@ -1261,7 +1274,7 @@
       <button class="downsell-close" id="downsellClose" aria-label="Fechar">×</button>
       <div class="ds-tag">🌿 Espera! Uma última condição</div>
       <h3>Leve tudo com desconto</h3>
-      <p>Já que você chegou até aqui, que tal levar o <strong>Manual Completo + os 5 bônus</strong> por um valor especial, só agora?</p>
+      <p>Já que você chegou até aqui, que tal levar as <strong>+75 plantas + os 5 bônus</strong> por um valor especial, só agora?</p>
       <div class="ds-price"><s>R$ 29,90</s> R$ 25,90</div>
       <p style="font-size:0.85rem;">pagamento único • acesso imediato</p>
       <a href="#" class="btn btn-vip" id="checkoutDownsell">Sim, quero tudo com desconto ➔</a>
