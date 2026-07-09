@@ -1,0 +1,14 @@
+{
+  "name": "manual-visual-chas",
+  "version": "1.0.0",
+  "description": "Página de vendas — Manual Visual do Preparo Correto dos Chás",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.4.0"
+  }
+}
